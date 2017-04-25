@@ -1,5 +1,9 @@
 package Model;
 
+import java.util.HashMap;
+import java.util.Map;
+import javax.faces.event.AjaxBehaviorEvent;
+
 /**
  *
  * @author it353S733
@@ -102,4 +106,30 @@ public class Account {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    
+    //possible search 
+   private Map<String, String> exampleData = new HashMap<String, String>() {{ 
+        put("ISU", "Illinois State Univerity"); 
+        put("UoI", "University of Illinois");
+    }};
+
+    private String searchUni; 
+    private String uni;
+
+    public void updateUni(AjaxBehaviorEvent event) {
+        uni = exampleData.get(searchUni);
+    }
+
+    public String getSearchString() {
+        return searchUni;
+    }
+
+    public void setSearchString(String searchString) {
+        this.searchUni = searchString;
+    }
+
+    public String getUni() {
+        return uni;
+    }
+
 }
