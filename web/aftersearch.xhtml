@@ -16,16 +16,16 @@ and open the template in the editor.
     </h:head>
     <body>
         
-          <h:form class="search">
+          <h:form class="form-signin">
            <h:inputText   value="#{searchController.searchKeyword}" />
                        <h:commandLink type="button" class="btn btn-lg btn-primary" action="aftersearch.xhtml">   Search Again
                                                     </h:commandLink>
 <h:commandButton class="btn btn-lg btn-warning" id="cancelbutton" value="Go Back" action="dashboard.xhtml"></h:commandButton>
-                <br></br> 
+                 
                    Username: <h:outputText id="output" value="#{searchController.getSearchResults()}"></h:outputText>
                 
-                <br></br> Note: only searches by full email as of right now, and output the database string, will fix later :)
-                <br></br> Example: insert bovagli@ilstu.edu in search box
+                 Note: only searches by full email as of right now, and output the database string, will fix later :)
+                Example: insert bovagli@ilstu.edu in search box
                 
                
             
