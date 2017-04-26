@@ -122,7 +122,7 @@ public class AccountDAO {
         return a;
     }
 
-    public int register(Account account) {
+     public int register(Account account) {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
@@ -135,10 +135,25 @@ public class AccountDAO {
             Connection connection;
             connection = DriverManager.getConnection(myDB, "itkstu", "student");
             Statement st = connection.createStatement();
+            
+            String testString="'','','";
+            
+            if(account.getScoreType().equals("PSAT/NMSQT")){
+                testString = account.getTestScore()+ ",null,null";
+            }
+            
+            if(account.getScoreType().equals("SAT")){
+                testString = "null," + account.getTestScore()+ ",null";
+            }
+            
+            if(account.getScoreType().equals("ACT")){
+                testString = "null,null," + account.getTestScore()+ "";
+            }
+            
             String sql = "INSERT INTO Account VALUES ('"
                     + account.getFirstName() + "','" + account.getLastName() + "','"
                     + account.getEmail() + "','" + account.getPassword() + "', "
-                    + "0" + ")";
+                    + "0, '" + account.getUniversityOC() + "','" + account.getMajorOC() + "'," + testString + ",null)";
             st.executeUpdate(sql);
             connection.close();
         } catch (SQLException e) {

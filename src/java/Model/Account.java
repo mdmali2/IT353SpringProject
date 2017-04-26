@@ -15,6 +15,10 @@ public class Account {
     private String password;
     private String confirmPass;
     private String email;
+    private String universityOC;
+    private String majorOC;
+    private String testScore;
+    private String scoreType;
     private int isAdmin;
     
     //applytoschool strings
@@ -85,7 +89,7 @@ public class Account {
      * @return the isAdmin
      */
     public int isIsAdmin() {
-        return isAdmin;
+        return getIsAdmin();
     }
 
     /**
@@ -133,15 +137,15 @@ public class Account {
     private String uni;
 
     public void updateUni(AjaxBehaviorEvent event) {
-        uni = exampleData.get(searchUni);
+        setUni(getExampleData().get(getSearchUni()));
     }
 
     public String getSearchString() {
-        return searchUni;
+        return getSearchUni();
     }
 
     public void setSearchString(String searchString) {
-        this.searchUni = searchString;
+        this.setSearchUni(searchString);
     }
 
     public String getUni() {
@@ -265,6 +269,69 @@ public class Account {
      */
     public void setUni(String uni) {
         this.uni = uni;
+    }
+
+    /**
+     * @return the universityOC
+     */
+    public String getUniversityOC() {
+        return universityOC;
+    }
+
+    /**
+     * @param universityOC the universityOC to set
+     */
+    public void setUniversityOC(String universityOC) {
+        this.universityOC = universityOC;
+    }
+
+    /**
+     * @return the majorOC
+     */
+    public String getMajorOC() {
+        return majorOC;
+    }
+
+    /**
+     * @param majorOC the majorOC to set
+     */
+    public void setMajorOC(String majorOC) {
+        this.majorOC = majorOC;
+    }
+
+    /**
+     * @return the testScore
+     */
+    public String getTestScore() {
+        return testScore;
+    }
+
+    /**
+     * @param testScore the testScore to set
+     */
+    public void setTestScore(String testScore) {
+        this.testScore = testScore;
+    }
+
+    /**
+     * @return the scoreType
+     */
+    public String getScoreType() {
+        return scoreType;
+    }
+
+    /**
+     * @param scoreType the scoreType to set
+     */
+    public void setScoreType(String scoreType) {
+        this.scoreType = scoreType;
+    }
+
+    /**
+     * @return the isAdmin
+     */
+    public int getIsAdmin() {
+        return isAdmin;
     }
 
 }

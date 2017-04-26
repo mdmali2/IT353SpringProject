@@ -25,6 +25,19 @@
             <h:inputSecret id="password" value="#{controller.account.password}"></h:inputSecret>
             <h3 class="form-signin-heading"> Confirm password:</h3>
             <h:inputSecret id="confirmPassword" value="#{controller.account.confirmPass}"></h:inputSecret>
+            <h3 class="form-signin-heading"> Enter University of Choice</h3>
+            <h:inputText id="university" value="#{controller.account.universityOC}"></h:inputText>
+            <h3 class="form-signin-heading"> Enter Major of Choice</h3>
+            <h:inputText id="major" value="#{controller.account.majorOC}"></h:inputText>
+            <h3 class="form-signin-heading"> Select one of the following and enter the appropriate score:</h3>
+            <h:selectOneRadio id="scoreradio" value="#{controller.account.scoreType}">
+                <f:selectItem itemValue="ACT" itemLabel="ACT Score" />
+   	        <f:selectItem itemValue="SAT" itemLabel="SAT Score" />
+                <f:selectItem itemValue="PSAT/NMSQT" itemLabel="PSAT/NMSQT Score" />
+            </h:selectOneRadio>
+            
+            <h3 class="form-signin-heading"> Enter one of the following test scores:</h3>
+            <h:inputText id="testscore" value="#{controller.account.testScore}"></h:inputText>
             <br></br>
             <br></br>
             <p:commandButton class="btn btn-lg btn-primary btn-block" id="loginbutton" value="Sign up" action="#{controller.authenticate()}" update="message"></p:commandButton>
