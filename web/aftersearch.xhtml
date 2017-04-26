@@ -9,20 +9,25 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+    <h:head>
+        <title>Search</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+        <link href="signin.css" rel="stylesheet"></link>
+    </h:head>
     <body>
-        <div>TODO write content</div>
+        
           <h:form class="search">
-          
-
-                
+           <h:inputText   value="#{searchController.searchKeyword}" />
+                       <h:commandLink type="button" class="btn btn-lg btn-primary" action="aftersearch.xhtml">   Search Again
+                                                    </h:commandLink>
+<h:commandButton class="btn btn-lg btn-warning" id="cancelbutton" value="Go Back" action="dashboard.xhtml"></h:commandButton>
+                <br></br> 
                    Username: <h:outputText id="output" value="#{searchController.getSearchResults()}"></h:outputText>
                 
                 <br></br> Note: only searches by full email as of right now, and output the database string, will fix later :)
                 <br></br> Example: insert bovagli@ilstu.edu in search box
+                
+               
             
 
         </h:form>

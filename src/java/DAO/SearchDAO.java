@@ -25,6 +25,7 @@ import javax.faces.bean.RequestScoped;
 public class SearchDAO implements Serializable {
 
     
+    
     /**
      * Creates a new instance of SearchDAO
      */
@@ -54,7 +55,7 @@ public class SearchDAO implements Serializable {
             Connection DBConn = DriverManager.getConnection(myDB, "itkstu", "student");
             Statement stmt = DBConn.createStatement();
             ResultSet rs = stmt.executeQuery(sqlStr);
-            Search asearch = new Search();;
+            Search asearch = new Search();
             while (rs.next()) {
                 asearch.setUsername(rs.getString("Username"));
                 aSearchBeanCollection.add(asearch);
