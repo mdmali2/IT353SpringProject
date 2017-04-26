@@ -27,28 +27,33 @@ and open the template in the editor.
             <h:inputText id="lastName" value="#{controller.account.lastName}"></h:inputText>
             
             <h3 class="form-apply-heading"> High School Attended:</h3>
-           <h:inputText id="attended" value=""></h:inputText>
+           <h:inputText id="attended" value="#{controller.account.highscool}"></h:inputText>
             
              <h3 class="form-apply-heading"> High School GPA:</h3>
-           <h:inputText id="gpa" value=""></h:inputText>
+           <h:inputText id="gpa" value="#{controller.account.gpa}"></h:inputText>
             <h3 class="form-apply-heading"> ACT Score:</h3>
-           <h:inputText id="actscore" value=""></h:inputText>
+           <h:inputText id="actscore" value="#{controller.account.act}"></h:inputText>
             <h3 class="form-apply-heading"> SAT Score:</h3>
-            <h:inputText id="satscore" value=""></h:inputText>
+            <h:inputText id="satscore" value="#{controller.account.sat}"></h:inputText>
             <h3 class="form-apply-heading"> Desired University:</h3>
-            <h:inputText id="university" value=""></h:inputText>
+            <h:inputText id="university" value="#{controller.account.desireduni}"></h:inputText>
             <br></br>
             <h3 class="form-apply-heading"> List your highschool extracurricular activites:</h3>
-            <h:inputTextarea id="activites" value=""></h:inputTextarea>
+            <h:inputTextarea id="activites" value="#{controller.account.activites}"></h:inputTextarea>
             <br></br>
-            <p:commandButton class="btn btn-lg btn-primary btn-block" id="updatebutton" value="Apply" 
-                             action="#{controller.updateAccount()}" update="message">
-                <f:ajax onevent="updateAccount()"/>
+            <p:commandButton class="btn btn-lg btn-primary btn-block" id="applybutton" value="Apply" 
+                             action="#{controller.application()}" update="message">
+                
             </p:commandButton>
             <br></br>
             <h:commandButton class="btn btn-lg btn-warning btn-block" id="cancelbutton" value="Cancel" action="dashboard.xhtml"></h:commandButton>
             <br></br>
-            
+            <script>
+                    function application()
+                    {
+                        alert("Applied!");
+                    }
+            </script>
            
         </h:form>
     </h:body>
