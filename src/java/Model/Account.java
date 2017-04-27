@@ -21,13 +21,7 @@ public class Account {
     private String scoreType;
     private int isAdmin;
     
-    //applytoschool strings
-    private String gpa;
-    private String activites;
-    private String desireduni;
-    private String highscool;
-    private String sat;
-    private String act;
+   
     
     
     public Account() {
@@ -40,13 +34,7 @@ public class Account {
         this.email = email;
         this.password = pass;
         this.isAdmin = 0;
-        this.act=act;
-        this.sat=sat;
-        this.highscool=highscool;
-        this.desireduni=desireduni;
-        this.activites=activites;
-        this.gpa=gpa;
-                
+        
     }
     /**
      * @return the password
@@ -155,86 +143,7 @@ public class Account {
     /**
      * @return the gpa
      */
-    public String getGpa() {
-        return gpa;
-    }
-
-    /**
-     * @param gpa the gpa to set
-     */
-    public void setGpa(String gpa) {
-        this.gpa = gpa;
-    }
-
-    /**
-     * @return the activites
-     */
-    public String getActivites() {
-        return activites;
-    }
-
-    /**
-     * @param activites the activites to set
-     */
-    public void setActivites(String activites) {
-        this.activites = activites;
-    }
-
-    /**
-     * @return the desireduni
-     */
-    public String getDesireduni() {
-        return desireduni;
-    }
-
-    /**
-     * @param desireduni the desireduni to set
-     */
-    public void setDesireduni(String desireduni) {
-        this.desireduni = desireduni;
-    }
-
-    /**
-     * @return the highscool
-     */
-    public String getHighscool() {
-        return highscool;
-    }
-
-    /**
-     * @param highscool the highscool to set
-     */
-    public void setHighscool(String highscool) {
-        this.highscool = highscool;
-    }
-
-    /**
-     * @return the sat
-     */
-    public String getSat() {
-        return sat;
-    }
-
-    /**
-     * @param sat the sat to set
-     */
-    public void setSat(String sat) {
-        this.sat = sat;
-    }
-
-    /**
-     * @return the act
-     */
-    public String getAct() {
-        return act;
-    }
-
-    /**
-     * @param act the act to set
-     */
-    public void setAct(String act) {
-        this.act = act;
-    }
+    
 
     /**
      * @return the exampleData

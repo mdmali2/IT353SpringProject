@@ -42,7 +42,7 @@ public class SearchController implements Serializable {
         return searchresults;
     }
 
-    public void setTheSearchBean(List<Search> searchresults) {
+    public void setTheSearch(List<Search> searchresults) {
         this.searchresults = searchresults;
     }
 

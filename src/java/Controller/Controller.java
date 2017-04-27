@@ -302,63 +302,9 @@ public class Controller {
         this.account = account;
     }
     
-    //method to apply to school
-    public String application()
-    {
-        boolean applied = true;
-        //Making sure all values have been inputed
-        if (account.getFirstName().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your firstname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-        if (account.getLastName().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-       if (account.getLastName().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-       if (account.getGpa().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-       if (account.getActivites().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-       if (account.getGpa().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-       if (account.getDesireduni().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-       if (account.getHighscool().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-       if (account.getSat().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
-       if (account.getAct().equals("")) {
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Invalid Inputs!", "Please enter a your lastname.");
-            FacesContext.getCurrentInstance().addMessage(null, message);
-            applied = false;
-        }
+    
        
       
-       return "dashboard.xhtml";
-    }
+      
+    
 }

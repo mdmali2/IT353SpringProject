@@ -16,13 +16,13 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class Search {
 //possible search options
- private  String firstName;
+ private  String lastname;
     private String Firstname;
     private String desiredschool;
     private String gpa;
     private String act;
     private String username;
-    
+    private String picture;
    
 
     public Search(){
@@ -97,6 +97,34 @@ public class Search {
      */
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    /**
+     * @return the lastname
+     */
+    public String getLastname() {
+        return lastname;
+    }
+
+    /**
+     * @param lastname the lastname to set
+     */
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    /**
+     * @return the picture
+     */
+    public String getPicture() {
+        return picture;
+    }
+
+    /**
+     * @param picture the picture to set
+     */
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
 

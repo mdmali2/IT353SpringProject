@@ -22,14 +22,42 @@ and open the template in the editor.
                                                     </h:commandLink>
 <h:commandButton class="btn btn-lg btn-warning" id="cancelbutton" value="Go Back" action="dashboard.xhtml"></h:commandButton>
                  
-                   Username: <h:outputText id="output" value="#{searchController.getSearchResults()}"></h:outputText>
-                
-                 Note: only searches by full email as of right now, and output the database string, will fix later :)
-                Example: insert bovagli@ilstu.edu in search box
+<!-- fixed search function using https://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
+                   <h:dataTable value="#{searchController.getSearchResults()}" var="profile"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    		border="2"
+            cellspacing="1" cellpadding="1">
+
+    			<h:column>
+    				
+    				<f:facet name="header">Picture</f:facet>
+    				<!-- row record -->
+    				#{profile.picture}
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">Email</f:facet>
+    				#{profile.username}
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">First Name</f:facet>
+    				#{profile.firstname}
+    			</h:column>
+                <h:column>
+    				<f:facet name="header">Last Name</f:facet>
+    				#{profile.lastname}
+    			</h:column>
+                 <h:column>
+    				<f:facet name="header">Desired University</f:facet>
+    				#{profile.desiredschool}
+    			</h:column>
                 
                
             
-
+                   </h:dataTable>
         </h:form>
     </body>
 </html>

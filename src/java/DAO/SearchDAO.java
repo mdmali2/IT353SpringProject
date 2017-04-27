@@ -58,6 +58,10 @@ public class SearchDAO implements Serializable {
             Search asearch = new Search();
             while (rs.next()) {
                 asearch.setUsername(rs.getString("Username"));
+                asearch.setFirstname(rs.getString("Firstname"));
+                asearch.setLastname(rs.getString("Lastname"));
+                asearch.setDesiredschool(rs.getString("universityofchoice"));
+                asearch.setPicture(rs.getString("uploadfile"));
                 aSearchBeanCollection.add(asearch);
                 asearch = new Search();
             }    
