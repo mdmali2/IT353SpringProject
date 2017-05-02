@@ -13,14 +13,18 @@
         <h:form class="form-signin">
             <p:layout fullPage="true">
                 <p:layoutUnit position="west">
-                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="compareAllStudents.xhtml" value="See Potential Students"/>
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
                     <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br>
                     <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br>
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#{controller.logout()}" value="Logout"/>
                 </p:layoutUnit>
-                <p:layoutUnit position="center"></p:layoutUnit>
+                <p:layoutUnit position="center">
+                    <p:selectOneMenu   value="#{universityController.university.universityName}">
+                        <f:selectItems value="#{universityController.getUniversityNames()}"/>
+                    </p:selectOneMenu>
+                </p:layoutUnit>
                 <p:layoutUnit position="south"> <img src="https://www.wired.com/wp-content/uploads/2015/09/google-logo-1200x630.jpg" width="40" height="20" alt="Google"/>
                     Sponsored by <h:outputLink value="http://google.com">Google</h:outputLink></p:layoutUnit>
             </p:layout>

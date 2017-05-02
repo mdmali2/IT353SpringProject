@@ -30,11 +30,11 @@
             <h3 class="form-signin-heading"> Enter Major of Choice</h3>
             <h:inputText id="major" value="#{controller.account.majorOC}"></h:inputText>
             <h3 class="form-signin-heading"> Select one of the following and enter the appropriate score:</h3>
-            <h:selectOneRadio id="scoreradio" value="#{controller.account.scoreType}">
+            <p:selectOneRadio id="scoreradio" value="#{controller.account.scoreType}">
                 <f:selectItem itemValue="ACT" itemLabel="ACT Score" />
    	        <f:selectItem itemValue="SAT" itemLabel="SAT Score" />
                 <f:selectItem itemValue="PSAT/NMSQT" itemLabel="PSAT/NMSQT Score" />
-            </h:selectOneRadio>
+            </p:selectOneRadio>
             
             <h3 class="form-signin-heading"> Enter one of the following test scores:</h3>
             <h:inputText id="testscore" value="#{controller.account.testScore}"></h:inputText>
@@ -44,13 +44,6 @@
             <br></br>
             <h:commandButton class="btn btn-lg btn-warning btn-block" id="cancelbutton" value="Cancel" action="index.xhtml"></h:commandButton>
         </h:form>
-        <h:form>
-                        <p:fileUpload fileUploadListener="#{controller.upload}" mode="advanced" dragDropSupport="false"
-                                      update="messages" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" >
-                            
-                        </p:fileUpload>
-                        <p:growl id="messages" showDetail="true" />
-       </h:form>
     </h:body>
 
 </html>
