@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.Account;
+import Model.Applicant;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -263,6 +264,47 @@ public class AccountDAO {
         {
             System.err.println(e.getMessage());
         }
+    }
+    
+    public int apply(Applicant applicant)
+    {
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+        } catch (ClassNotFoundException e) {
+            System.err.println(e.getMessage());
+            return 0;
+        }
+
+        try {
+            String myDB = "jdbc:derby://localhost:1527/Project353";
+            Connection connection;
+            connection = DriverManager.getConnection(myDB, "itkstu", "student");
+            Statement st = connection.createStatement();
+            
+            String testString="'','','";
+            
+            if(applicant.getScoreType().equals("PSAT/NMSQT")){
+                testString = applicant.getTestScore()+ ",null,null";
+            }
+            
+            if(applicant.getScoreType().equals("SAT")){
+                testString = "null," + applicant.getTestScore()+ ",null";
+            }
+            
+            if(applicant.getScoreType().equals("ACT")){
+                testString = "null,null," + applicant.getTestScore()+ "";
+            }
+            
+            String sql = "INSERT INTO Applicant VALUES ('"
+                    + applicant.getFirstName() + "','" + applicant.getLastName() + "','"
+                    + applicant.getEmail() + applicant.getUniversityOC() + "','" + applicant.getMajorOC() + "'," + testString + "'," + applicant.getActivities() + ")";
+            st.executeUpdate(sql);
+            connection.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return 0;
+        }
+        return 1;
     }
     
     //public int searchForAccount(Account account)

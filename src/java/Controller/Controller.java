@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import Model.Account;
 import DAO.AccountDAO;
+import Model.Applicant;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -31,9 +32,12 @@ import org.primefaces.event.FileUploadEvent;
 public class Controller {
 
     private Account account;
+    private Applicant applicant;
+    private String applicantResponse;
 
     public Controller() {
         account = new Account();
+        applicant = new Applicant();
     }
     
     
@@ -119,6 +123,16 @@ public class Controller {
         AccountDAO ad = new AccountDAO();
         int x = ad.uploadImage(event);
     }
+      public String apply()
+      {
+          AccountDAO ad = new AccountDAO();
+          if (ad.apply(applicant) == 1) {
+            return "success.xhtml";
+        } else {
+            return "apply.xhtml";
+        }
+         
+      }
 
     /**
      * checks if username is already DB and notifies using AJAX
@@ -136,7 +150,7 @@ public class Controller {
    public ArrayList<Account> getStudents() {
         return AccountDAO.getStudents();
     }
-
+   
     public String checkAccountInfo() {
         AccountDAO accDao = new AccountDAO();
         ArrayList accCollection = accDao.findByAccountEmail(account.getEmail());
@@ -183,6 +197,14 @@ public class Controller {
         return "index.xhtml";
         
     }
+    public String getResponse() {
+        String resultStr = "";
+        resultStr += "Hello " + applicant.getFirstName() + "<br/>";
+        resultStr += " you have applied to: " + applicant.getUniversityOC() + "<br/>";
+        resultStr += " Best of luck with you application. We will be in touch soon! ";
+        applicantResponse = resultStr;
+        return applicantResponse;
+            }
 
     /*
     * sends email
@@ -293,6 +315,33 @@ public class Controller {
      */
     public void setAccount(Account account) {
         this.account = account;
+    }
+    /**
+     * @return the applicant
+     */
+    public Applicant getApplicant() {
+        return applicant;
+    }
+
+    /**
+     * @param applicant the to set applicant
+     */
+    public void setApplicant(Applicant applicant) {
+        this.applicant = applicant;
+    }
+
+    /**
+     * @return the response
+     */
+    public String getApplicantResponse() {
+        return applicantResponse;
+    }
+
+    /**
+     * @param applicantResponse the response to set
+     */
+    public void setApplicantResponse(String applicantResponse) {
+        this.applicantResponse = applicantResponse;
     }
     
     

@@ -5,12 +5,47 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Apply</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+        <link href="signin.css" rel="stylesheet"></link>
+    </h:head>
     <body>
-        <div>TODO write content</div>
+
+        <h:form class="form-signin">
+            <h3 class="form-signin-heading"> Applying to:</h3> <h:outputText value="#{universitySearchController.searchKeyword}" />
+            <br></br>
+            <h3 class="form-signin-heading">Please Enter the requested data below.</h3>
+            <br></br>
+            <p:growl id="amessage" showDetail="true"/>
+            <h3 class="form-signin-heading"> First name: </h3>
+            <h:inputText id="afirstName" value="#{controller.applicant.firstName}"></h:inputText>
+            <h3 class="form-signin-heading"> Last name: </h3>
+            <h:inputText id="alastName" value="#{controller.applicant.lastName}"></h:inputText>
+            <h3 class="form-signin-heading"> Email:  </h3>
+            <h:inputText id="aemail" value="#{controller.applicant.email}">
+            </h:inputText>
+            <h3 class="form-signin-heading"> Enter Major of Choice</h3>
+            <h:inputText id="amajor" value="#{controller.applicant.majorOC}"></h:inputText>
+            <h3 class="form-signin-heading"> Enter University you are applying to:</h3>
+            <h:inputText id="university" value="#{controller.applicant.universityOC}"></h:inputText>
+            <h3 class="form-signin-heading"> Select one of the following and enter the appropriate score:</h3>
+            <p:selectOneRadio id="ascoreradio" value="#{controller.applicant.scoreType}">
+                <f:selectItem itemValue="ACT" itemLabel="ACT Score" />
+   	        <f:selectItem itemValue="SAT" itemLabel="SAT Score" />
+                <f:selectItem itemValue="PSAT/NMSQT" itemLabel="PSAT/NMSQT Score" />
+            </p:selectOneRadio>
+            <h3 class="form-signin-heading"> Enter one of the following test scores:</h3>
+            <h:inputText id="atestscore" value="#{controller.applicant.testScore}"></h:inputText>
+            <br></br>
+            <br></br>
+            <h3 class="form-signin-heading"> Enter the High School Activities you participated in. (Example: Sports, Clubs)</h3>
+            <h:inputText id="aactivities" value="#{controller.applicant.activities}"></h:inputText>
+           <p:commandButton class="btn btn-lg btn-primary btn-block" id="loginbutton" value="Apply" action="#{controller.apply()}" update="amessage"></p:commandButton>
+        </h:form>
     </body>
 </html>
