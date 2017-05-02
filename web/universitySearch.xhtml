@@ -23,7 +23,10 @@
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#{controller.logout()}" value="Logout"/>
                 </p:layoutUnit>
                 <p:layoutUnit position="center">
-                    
+                    <h3 class="form-signin-heading">Enter University to Search</h3>
+                    <h:inputText   value="#{universitySearchController.searchKeyword}" />
+                       <h:commandLink type="button" class="btn btn-sm btn-primary" id="loginbutton" action="universityResults.xhtml">   Search
+       </h:commandLink>
                 </p:layoutUnit>
                 <p:layoutUnit position="south"> <img src="https://www.wired.com/wp-content/uploads/2015/09/google-logo-1200x630.jpg" width="40" height="20" alt="Google"/>
                     Sponsored by <h:outputLink value="http://google.com">Google</h:outputLink></p:layoutUnit>

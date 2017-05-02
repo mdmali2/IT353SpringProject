@@ -4,58 +4,13 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-
-<!-- Apply page by Bailey vaglica-->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
-        <link href="signin.css" rel="stylesheet"></link>
-    </h:head>
-    <h:body>
-        <h1 class="form-apply-heading" align="center">Apply</h1>
-        <h:form class="form-apply">
-            <p:growl id="message" showDetail="true"/>
-            <h3 class="form-apply-heading">Please enter the requested information below:</h3>
-            <br></br>
-            <h3 class="form-apply-heading"> First name: </h3>
-            <h:inputText id="firstName" value="#{controller.account.firstName}"></h:inputText>
-            <h3 class="form-apply-heading"> Last name: </h3>
-            <h:inputText id="lastName" value="#{controller.account.lastName}"></h:inputText>
-            
-            <h3 class="form-apply-heading"> High School Attended:</h3>
-           <h:inputText id="attended" value="#{controller.account.highscool}"></h:inputText>
-            
-             <h3 class="form-apply-heading"> High School GPA:</h3>
-           <h:inputText id="gpa" value="#{controller.account.gpa}"></h:inputText>
-            <h3 class="form-apply-heading"> ACT Score:</h3>
-           <h:inputText id="actscore" value="#{controller.account.act}"></h:inputText>
-            <h3 class="form-apply-heading"> SAT Score:</h3>
-            <h:inputText id="satscore" value="#{controller.account.sat}"></h:inputText>
-            <h3 class="form-apply-heading"> Desired University:</h3>
-            <h:inputText id="university" value="#{controller.account.desireduni}"></h:inputText>
-            <br></br>
-            <h3 class="form-apply-heading"> List your highschool extracurricular activites:</h3>
-            <h:inputTextarea id="activites" value="#{controller.account.activites}"></h:inputTextarea>
-            <br></br>
-            <p:commandButton class="btn btn-lg btn-primary btn-block" id="applybutton" value="Apply" 
-                             action="#{controller.application()}" update="message">
-                
-            </p:commandButton>
-            <br></br>
-            <h:commandButton class="btn btn-lg btn-warning btn-block" id="cancelbutton" value="Cancel" action="dashboard.xhtml"></h:commandButton>
-            <br></br>
-            <script>
-                    function application()
-                    {
-                        alert("Applied!");
-                    }
-            </script>
-    
-        </h:form>
-    </h:body>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
 </html>
