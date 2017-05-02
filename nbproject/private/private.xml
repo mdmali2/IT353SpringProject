@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/src/java/DAO/AccountDAO.java</file>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/web/dashboard.xhtml</file>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/src/java/Controller/SearchController.java</file>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/web/a_dashboard.xhtml</file>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/src/java/Model/Account.java</file>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/src/java/DAO/SearchDAO.java</file>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/web/compareAllStudents.xhtml</file>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/src/java/Controller/Controller.java</file>
-            <file>file:/D:/Users/it353s730/Documents/GitHub/IT353SpringProject/web/register.xhtml</file>
+            <file>file:/I:/NetBeansApps/IT353SpringProject/src/java/Model/Account.java</file>
+            <file>file:/I:/NetBeansApps/IT353SpringProject/web/compareAllStudents.xhtml</file>
+            <file>file:/I:/NetBeansApps/IT353SpringProject/src/java/Controller/Controller.java</file>
+            <file>file:/I:/NetBeansApps/IT353SpringProject/web/a_dashboard.xhtml</file>
+            <file>file:/I:/NetBeansApps/IT353SpringProject/src/java/DAO/AccountDAO.java</file>
         </group>
     </open-files>
 </project-private>
