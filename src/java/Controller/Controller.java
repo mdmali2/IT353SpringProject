@@ -117,7 +117,7 @@ public class Controller {
     
       public void upload(FileUploadEvent event) {
         AccountDAO ad = new AccountDAO();
-        int x = ad.uploadImage(event, account);
+        int x = ad.uploadImage(event);
     }
 
     /**

@@ -188,19 +188,14 @@ public class AccountDAO {
         return 1;
     }
    
-    public int uploadImage(FileUploadEvent event, Account account) {
+    public int uploadImage(FileUploadEvent event) {
         try {
             String myDB = "jdbc:derby://localhost:1527/Project353";
             Connection connection = DriverManager.getConnection(myDB, "itkstu", "student");
-            String sql = "insert into Photos (FILENAME, EMAIL, RATING, TOTAL, IMAGECONTENT, SUBMISSIONDATE)";
-            String values = "values (?,?,?,?,?,?)";
+            String sql = "insert into PICTURE (PICTURE)";
+            String values = "values (?)";
             PreparedStatement ps = connection.prepareStatement(sql + values);
-            ps.setString(1, event.getFile().getFileName());
-            ps.setString(2, account.getEmail());
-            ps.setInt(3, 0);
-            ps.setInt(4, 0);
-            ps.setBytes(5, event.getFile().getContents());
-            ps.setDate(6, new Date(Calendar.getInstance().getTime().getTime()));
+            ps.setBytes(1, event.getFile().getContents());
             ps.execute();
             ps.close();
         } catch (SQLException e) {

@@ -44,6 +44,13 @@
             <br></br>
             <h:commandButton class="btn btn-lg btn-warning btn-block" id="cancelbutton" value="Cancel" action="index.xhtml"></h:commandButton>
         </h:form>
+        <h:form>
+                        <p:fileUpload fileUploadListener="#{controller.upload}" mode="advanced" dragDropSupport="false"
+                                      update="messages" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" >
+                            
+                        </p:fileUpload>
+                        <p:growl id="messages" showDetail="true" />
+       </h:form>
     </h:body>
 
 </html>
