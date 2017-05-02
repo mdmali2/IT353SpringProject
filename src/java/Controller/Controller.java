@@ -34,6 +34,7 @@ public class Controller {
     private Account account;
     private Applicant applicant;
     private String applicantResponse;
+    private boolean send;
 
     public Controller() {
         account = new Account();
@@ -345,7 +346,17 @@ public class Controller {
     }
     
     
+       	 public String sendEmail2() {
        
+   send=true;
+       if (send=true){
+           account.sendEmail();
+
+       
+}
+    return "a_dashboard.xhtml";   
+}
+
       
       
     

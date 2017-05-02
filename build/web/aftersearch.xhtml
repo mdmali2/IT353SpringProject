@@ -20,7 +20,7 @@ and open the template in the editor.
             <h:inputText   value="#{searchController.searchKeyword}" />
             <h:commandLink type="button" class="btn btn-lg btn-primary" action="aftersearch.xhtml">   Search Again
             </h:commandLink>
-            <h:commandButton class="btn btn-lg btn-warning" id="cancelbutton" value="Go Back" action="dashboard.xhtml"></h:commandButton>
+            <h:commandButton class="btn btn-lg btn-warning" id="cancelbutton" value="Go Back" action="a_dashboard.xhtml"></h:commandButton>
 
             <!-- fixed search function using https://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
             <h:dataTable value="#{searchController.getSearchResults()}" var="profile"
