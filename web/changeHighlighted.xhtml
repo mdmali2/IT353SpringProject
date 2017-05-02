@@ -5,7 +5,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Main</title>
+        <title>Change Highlighted University</title>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
         <link href="signin.css" rel="stylesheet"></link>
     </h:head>
@@ -25,14 +25,14 @@
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#{controller.logout()}" value="Logout"/>
                 </p:layoutUnit>
                 <p:layoutUnit position="center">
-                    <h3 class="form-signin-heading">Enter Student Name to Search</h3>
-                    <h:inputText   value="#{searchController.searchKeyword}" />
-                    <h:commandLink type="button" class="btn btn-sm btn-primary" id="loginbutton" action="aftersearch.xhtml">   Search
-                    </h:commandLink>
-                    <br/><br/><br/><br/><br/>
-                    <h:outputText value="#{universityController.displayHighlighted()}" escape="false"/>
-                    <a href="#{universityController.hilightedLink}">Click here!</a>
+                    <h3 class="form-signin-heading">Change the Highlighted University</h3>
                     
+                        <p:selectOneMenu value ="#{universityController.hilightedUniversity}">
+                            <f:selectItems value="#{universityController.getUniversityNames()}"/>
+                        </p:selectOneMenu><br/>
+                        <h:commandLink type="button" class="btn btn-sm btn-primary" id="changehighlighted" action="#{universityController.changeHighlighted()}">Change University
+                    </h:commandLink>
+                        
                 </p:layoutUnit>
                 
                 <p:layoutUnit position="south"> <img src="https://www.wired.com/wp-content/uploads/2015/09/google-logo-1200x630.jpg" width="40" height="20" alt="Google"/>
@@ -45,4 +45,3 @@
         </h:form>
     </h:body>
 </html>
-

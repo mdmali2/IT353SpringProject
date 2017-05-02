@@ -7,10 +7,14 @@ package Controller;
 
 import DAO.UniversityDAO;
 import Model.University;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -26,11 +30,35 @@ public class UniversityController {
     
     private University university;
     private List<University> universities;
+    private String hilightedUniversity;
+    private String hilightedLink;
     
     public UniversityController() {
         UniversityDAO dao = new UniversityDAO();
         List<University> list = dao.findAllUniversities();
         this.universities = list;
+    }
+    public void changeHighlighted(){
+        UniversityDAO dao = new UniversityDAO();
+        dao.changeHighlightedUni(getHilightedUniversity());
+        List<University> list = dao.findAllUniversities();
+        this.setUniversities(list);
+        
+    }
+    
+    public String displayHighlighted(){
+        for(int i = 0; i < getUniversities().size(); i++){
+            if(getUniversities().get(i).isHighlighted()){
+                setUniversity(getUniversities().get(i));
+            }
+        }
+        
+        setHilightedLink(getUniversity().getLinkAddress());
+        
+        String highlighted = "The highlighted University is: " + getUniversity().getUniversityName() + "!!<br/><br/>They are located in: " +
+                getUniversity().getLocation() + "<br/><br/>Check out their website!! - ";
+                
+        return highlighted;
     }
 
     /**
@@ -66,12 +94,40 @@ public class UniversityController {
      */
     public List<String> getUniversityNames() {
         List<String> universityNames = new ArrayList<String>();
-        for(int i =0; i < universities.size(); i++){
-            String name = universities.get(i).getUniversityName();
+        for(int i =0; i < getUniversities().size(); i++){
+            String name = getUniversities().get(i).getUniversityName();
             universityNames.add(name);
         }
        
         return universityNames;
+    }
+
+    /**
+     * @return the hilightedUniversity
+     */
+    public String getHilightedUniversity() {
+        return hilightedUniversity;
+    }
+
+    /**
+     * @param hilightedUniversity the hilightedUniversity to set
+     */
+    public void setHilightedUniversity(String hilightedUniversity) {
+        this.hilightedUniversity = hilightedUniversity;
+    }
+
+    /**
+     * @return the hilightedLink
+     */
+    public String getHilightedLink() {
+        return hilightedLink;
+    }
+
+    /**
+     * @param hilightedLink the hilightedLink to set
+     */
+    public void setHilightedLink(String hilightedLink) {
+        this.hilightedLink = hilightedLink;
     }
 
   
