@@ -8,6 +8,7 @@ package DAO;
 import Model.Account;
 import Model.University;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -35,7 +36,40 @@ public class UniversityDAO {
         return aProfileCollection;
     }
     
-       private ArrayList selectAccountsFromDB(String query) {
+    public ArrayList findUniversityByName(String name) {
+        String query = "select * from UNIVERSITY";
+        query += "WHERE universityname = '" + name + "'";
+        
+        ArrayList aProfileCollection = selectAccountsFromDB(query);
+        return aProfileCollection;
+    }
+    
+    public int changeHighlightedUni(String newHighlighted) {
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+        } catch (ClassNotFoundException e) {
+            System.err.println(e.getMessage());
+            return 0;
+        }
+
+        try {
+            String myDB = "jdbc:derby://localhost:1527/Project353";
+            Connection connection = DriverManager.getConnection(myDB, "itkstu", "student");
+            Statement st = connection.createStatement();
+            String sql = "UPDATE UNIVERSITY SET highlighted = false";
+            st.executeUpdate(sql);
+            sql = "UPDATE UNIVERSITY SET highlighted = true WHERE UNIVERSITYNAME = '" 
+                    + newHighlighted + "'";
+            st.executeUpdate(sql);
+            connection.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return 0;
+        }
+        return 1;
+    }
+    
+    private ArrayList selectAccountsFromDB(String query) {
         ArrayList aUniversityCollection = new ArrayList();
         Connection DBConn = null;
         try {

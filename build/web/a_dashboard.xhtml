@@ -17,7 +17,7 @@
                 <p:layoutUnit position="north"><h2>University's Page</h2></p:layoutUnit>
                 <p:layoutUnit position="west">
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="compareAllStudents.xhtml" value="See Potential Students"/>
-                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="changeHighlighted.xhtml" value="Change Highlighted University"/>
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
                     <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br>
                     <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br>
@@ -27,8 +27,11 @@
                 <p:layoutUnit position="center">
                     <h3 class="form-signin-heading">Enter Student Name to Search</h3>
                     <h:inputText   value="#{searchController.searchKeyword}" />
-                       <h:commandLink type="button" class="btn btn-sm btn-primary" id="loginbutton" action="aftersearch.xhtml">   Search
-       </h:commandLink>
+                    <h:commandLink type="button" class="btn btn-sm btn-primary" id="loginbutton" action="aftersearch.xhtml">   Search
+                    </h:commandLink>
+                    <br/><br/><br/><br/><br/>
+                    <h:outputText value="#{universityController.displayHighlighted()}" escape="false"/>
+                    <a href="#{universityController.hilightedLink}">Click here!</a>
                     
                 </p:layoutUnit>
                 

@@ -22,6 +22,10 @@ public class University {
     private String linkAddress;
     private boolean highlighted;
     
+    public University() {
+        
+    }
+    
     public University(String universityName, String location, String description, String linkAddress, boolean highlighted) {
         this.universityName = universityName;
         this.location = location;
