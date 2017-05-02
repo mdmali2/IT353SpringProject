@@ -73,6 +73,44 @@ public class AccountDAO {
         }
         return aUserCollection;
     }
+    
+    public static ArrayList<Account> getStudents() {
+        Connection DBConn = null;
+        try {
+            DBHelper.loadDriver("org.apache.derby.jdbc.ClientDriver");
+            // if doing the above in Oracle: DBHelper.loadDriver("oracle.jdbc.driver.OracleDriver");
+            String myDB = "jdbc:derby://localhost:1527/Project353";
+            // if doing the above in Oracle:  String myDB = "jdbc:oracle:thin:@oracle.itk.ilstu.edu:1521:ora478";
+            DBConn = DBHelper.connect2DB(myDB, "itkstu", "student");
+            PreparedStatement ps = DBConn.prepareStatement("select * from ACCOUNT WHERE ADMIN = 0");
+            ArrayList<Account> al = new ArrayList<Account>();
+            ResultSet rs = ps.executeQuery();
+            boolean found = false;
+            while (rs.next()) {
+                Account e = new Account();
+                e.setFirstName(rs.getString("FIRSTNAME"));
+                e.setLastName(rs.getString("LASTNAME"));
+                e.setEmail(rs.getString("USERNAME"));
+                e.setUniversityOC(rs.getString("UNIVERSITYOFCHOICE"));
+                al.add(e);
+                found = true;
+            }
+            rs.close();
+            if (found) {
+                return al;
+            } else {
+                return null; // no entires found
+            }
+        } catch (Exception e) {
+            System.out.println("Error In getCustomer() -->" + e.getMessage());
+            return (null);
+        }
+    }
+    
+    
+    
+    
+    
 
     public int login(Account account) {
         try {

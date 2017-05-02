@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Main</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+        <link href="signin.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body>
+        <h:form class="form-signin">
+            <p:layout fullPage="true">
+                <p:layoutUnit position="west">
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
+                    <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br>
+                    <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br>
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="#{controller.logout()}" value="Logout"/>
+                </p:layoutUnit>
+                <p:layoutUnit position="center">
+                    <h:form id="form-signin"> 
+                        <p:dataTable value="#{controller.students}" var="o" paginator="true" rows="3"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="3,5,10" widgetVar="50" style="width: 600px;" >
+                            <f:facet name="header">  
+                    Student List  
+                </f:facet>
+                            <p:column  filterBy="#{o.firstName}">
+                    <f:facet name="header">  
+                        <h:outputText value="First Name" />  
+                    </f:facet>
+                    <h:outputText value="#{o.firstName}"/>
+                </p:column>
+                <p:column sortBy="#{o.lastName}">
+                    <f:facet name="header">  
+                        <h:outputText value="Last Name" />  
+                    </f:facet>
+                    <h:outputText value="#{o.lastName}"/>
+                </p:column>
+                            <p:column sortBy="#{o.email}">
+                    <f:facet name="header">  
+                        <h:outputText value="Email" />  
+                    </f:facet>
+                    <h:outputText value="#{o.email}"/>
+                </p:column>
+                            <p:column sortBy="#{o.universityOC}">
+                    <f:facet name="header">  
+                        <h:outputText value="University Of Choice" />  
+                    </f:facet>
+                                <h:outputText value="#{o.universityOC}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+                    
+                </p:layoutUnit>
+                <p:layoutUnit position="south"> <img src="https://www.wired.com/wp-content/uploads/2015/09/google-logo-1200x630.jpg" width="40" height="20" alt="Google"/>
+                    Sponsored by <h:outputLink value="http://google.com">Google</h:outputLink></p:layoutUnit>
+            </p:layout>
+        </h:form>
+    </h:body>
+</html>

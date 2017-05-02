@@ -133,15 +133,8 @@ public class Controller {
         }
     }
     
-    public String searchForStudents()
-    {
-        AccountDAO accDao = new AccountDAO();
-        ArrayList accCollection = accDao.searchForStudent(account.getEmail());
-        if (!accCollection.isEmpty()) {
-            return "<span style=\"color:red\">No Students!</span>";
-        } else {
-            return "displayStudent.xhtml";
-        }
+   public ArrayList<Account> getStudents() {
+        return AccountDAO.getStudents();
     }
 
     public String checkAccountInfo() {
