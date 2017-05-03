@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.SearchController;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -27,6 +28,7 @@ public class Account {
     private String testScore;
     private String scoreType;
     private int isAdmin;
+    private SearchController searchemail;
     
    
     
@@ -250,7 +252,7 @@ public class Account {
         return isAdmin;
     }
 public void sendEmail() {
-        String to = email;
+        String to = "bovagli@ilstu.edu";
         // Sender's email ID needs to be mentioned
         String from = "it353projectspring17@gmail.com";
         String host = "smtp.gmail.com";
@@ -287,7 +289,7 @@ public void sendEmail() {
             message.setSubject("Appointment Requested");
 
             // Send the actual HTML message, as big as you like
-            message.setContent("<h1>You have signed up for the webapp!</h1>",
+            message.setContent("<h1>Appointment requested</h1>",
                     "text/html");
 
             // Send message
@@ -297,5 +299,19 @@ public void sendEmail() {
             mex.printStackTrace();
         }
     
+    }
+
+    /**
+     * @return the searchemail
+     */
+    public SearchController getSearchemail() {
+        return searchemail;
+    }
+
+    /**
+     * @param searchemail the searchemail to set
+     */
+    public void setSearchemail(SearchController searchemail) {
+        this.searchemail = searchemail;
     }
 }

@@ -22,7 +22,7 @@ import javax.faces.bean.SessionScoped;
 public class SearchController implements Serializable {
 
     private List<Search> searchresults;
-    private String searchKeyword;
+    public String searchKeyword;
 
     public String getSearchKeyword() {
         return searchKeyword;
