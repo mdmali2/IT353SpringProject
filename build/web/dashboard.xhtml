@@ -5,7 +5,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Main</title>
+        <title>Student's Page</title>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
         <link href="signin.css" rel="stylesheet"></link>
     </h:head>
@@ -14,16 +14,16 @@
             <p:layout fullPage="true">
                 <p:layoutUnit position="north"><h2>Students's Page</h2></p:layoutUnit>
                 <p:layoutUnit position="west">
-                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="universitySearch.xhtml" value="Search for University"/>
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#" value="To Do"/>
                     <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br>
                     <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br>
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" action="updateaccount.xhtml" value="Update Account"/>
                     <h:commandButton class="btn btn-lg btn-primary btn-block" action="#{controller.logout()}" value="Logout"/>
                 </p:layoutUnit>
                 <p:layoutUnit position="center">
-                    <h2>Student's Page</h2>
-                    <p:selectOneMenu   value="#{universityController.university.universityName}">
+                    <p:selectOneMenu>
                         <f:selectItems value="#{universityController.getUniversityNames()}"/>
                     </p:selectOneMenu>
                 </p:layoutUnit>

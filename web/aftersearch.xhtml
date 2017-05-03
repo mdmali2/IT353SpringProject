@@ -15,55 +15,55 @@ and open the template in the editor.
         <link href="signin.css" rel="stylesheet"></link>
     </h:head>
     <body>
-        
-          <h:form class="form-signin">
-           <h:inputText   value="#{searchController.searchKeyword}" />
-                       <h:commandLink type="button" class="btn btn-lg btn-primary" action="aftersearch.xhtml">   Search Again
-                                                    </h:commandLink>
-<h:commandButton class="btn btn-lg btn-warning" id="cancelbutton" value="Go Back" action="dashboard.xhtml"></h:commandButton>
-                
-<!-- fixed search function using https://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
-                   <h:dataTable value="#{searchController.getSearchResults()}" var="profile"
-    			styleClass="order-table"
-    			headerClass="order-table-header"
-    			rowClasses="order-table-odd-row,order-table-even-row"
-    		
-            cellspacing="1" cellpadding="1">
-                         
-                       <h:column>
-    				
-    				<h:commandButton value="Request Apointment" action="appointment.xhtml" />
-    			</h:column>
 
-    			
-    			<h:column>
-    				
-    				<f:facet name="header">Picture</f:facet>
-    				<!-- row record -->
-    				#{profile.picture}
-    			</h:column>
+        <h:form class="form-signin">
+            <h:inputText   value="#{searchController.searchKeyword}" />
+            <h:commandLink type="button" class="btn btn-lg btn-primary" action="aftersearch.xhtml">   Search Again
+            </h:commandLink>
+            <h:commandButton class="btn btn-lg btn-warning" id="cancelbutton" value="Go Back" action="dashboard.xhtml"></h:commandButton>
 
-    			<h:column>
-    				<f:facet name="header">Email</f:facet>
-    				#{profile.username}
-    			</h:column>
+            <!-- fixed search function using https://www.mkyong.com/jsf2/jsf-2-datatable-example/ -->
+            <h:dataTable value="#{searchController.getSearchResults()}" var="profile"
+                         styleClass="order-table"
+                         headerClass="order-table-header"
+                         rowClasses="order-table-odd-row,order-table-even-row"
 
-    			<h:column>
-    				<f:facet name="header">First Name</f:facet>
-    				#{profile.firstname}
-    			</h:column>
+                         cellspacing="1" cellpadding="1">
+
                 <h:column>
-    				<f:facet name="header">Last Name</f:facet>
-    				#{profile.lastname}
-    			</h:column>
-                 <h:column>
-    				<f:facet name="header">Desired University</f:facet>
-    				#{profile.desiredschool}
-    			</h:column>
-                
-               
-            
-                   </h:dataTable>
+
+                    <h:commandButton value="Request Apointment" action="appointment.xhtml" />
+                </h:column>
+
+
+                <h:column>
+
+                    <f:facet name="header">Picture</f:facet>
+                    <!-- row record -->
+                    #{profile.picture}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                        #{profile.username}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">First Name</f:facet>
+                        #{profile.firstname}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Last Name</f:facet>
+                        #{profile.lastname}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Desired University</f:facet>
+                        #{profile.desiredschool}
+                </h:column>
+
+
+
+            </h:dataTable>
         </h:form>
     </body>
 </html>
